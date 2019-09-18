@@ -1,6 +1,6 @@
 #include "methods1.h"
-//#include "methods2.h"
-//#include "methods3.h"
+#include "methods2.h"
+#include "methods3.h"
 
 #include <iostream>
 #include <ctime>
@@ -80,7 +80,7 @@ void print_methods3(double u[]) {
 }
 
 void f1(double u[], int x0, double met()) {
-	method1(x0);
+	methods1(x0);
 	for (size_t i = 0; i < 100; i++) {
 		u[i] = met();
 	}
@@ -106,35 +106,35 @@ int main() {
 	double u[100];
 	switch (n) {
 	case 1:
-		f1(u[100], 1821, met_1());
+		f1( u, 1821, met_1);
 		break;
 	case 2:
-		f1(u[100], 431, met_2());
+		f1(u, 431, met_2);
 		break;
 	case 3:
-		f1(u[100], 687, met_3());
+		f1(u, 687, met_3);
 		break;
 	case 4:
-		f1(u[100], 1, met_4());
+		f1(u, 1, met_4);
 		break;
 	case 5:
-		f1(u[100], 360, met_5());
+		f1(u, 360, met_5);
 		break;
 
 	case 6:
-		f2(u[100], rand6());
+		f2(u, rand6);
 		break;
 	case 7:
-		f2(u[100], rand7());
+		f2(u, rand7);
 		break;
 	case 8:
-		f2(u[100], rand8());
+		f2(u, rand8);
 		break;
 	case 9:
-		f3(u[100], rand10());
+		f3(u, rand9);
 		break;
 	case 10:
-		f3(u[100], rand10());
+		f3(u, rand10);
 		break;
 	}
 	system("pause");

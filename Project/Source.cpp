@@ -21,61 +21,33 @@ void print_methods1(double u[]) {
 		sum += (quantity[j] / 100);
 		cout << "[" << double(j*0.1) << ";" << 0.1 + double(j *0.1) << "]" << "  " << quantity[j] / 100 << endl;
 	}
-	cout << sum << endl;
+	//cout << sum << endl;
 }
 void print_methods2(double u[]) {
 	double quantity[12] = { 0 };
+	double sum = 0;
 	for (size_t i = 0; i < 100; i++) {
-		if (u[i] >= -3 && u[i] < -2.5)
-			quantity[0]++;
-		if (u[i] >= -2.5 && u[i] < -2)
-			quantity[1]++;
-		if (u[i] >= -2 && u[i] < -1.5)
-			quantity[2]++;
-		if (u[i] >= -1.5 && u[i] < -1)
-			quantity[3]++;
-		if (u[i] >= -1 && u[i] < -0.5)
-			quantity[4]++;
-		if (u[i] >= -0.5 && u[i] < 0)
-			quantity[5]++;
-		if (u[i] >= 0 && u[i] < 0.5)
-			quantity[6]++;
-		if (u[i] >= 0.5 && u[i] < 1)
-			quantity[7]++;
-		if (u[i] >= 1 && u[i] < 1.5)
-			quantity[8]++;
-		if (u[i] >= 1.5 && u[i] <= 2)
-			quantity[9]++;
-		if (u[i] >= 2 && u[i] <= 2.5)
-			quantity[10]++;
-		if (u[i] >= 2.5 && u[i] <= 3)
-			quantity[11]++;
-	}
-	cout << "[-3.0; -2.5]" << quantity[0] / 100 << endl;
-	cout << "[-2.5; -2.0]" << quantity[1] / 100 << endl;
-	cout << "[-2.0; -1.5]" << quantity[2] / 100 << endl;
-	cout << "[-1.5; -1.0]" << quantity[3] / 100 << endl;
-	cout << "[-1.0; -0.5]" << quantity[4] / 100 << endl;
-	cout << "[-0.5; 0.0]" << quantity[5] / 100 << endl;
-	cout << "[0.0; 0.5]" << quantity[6] / 100 << endl;
-	cout << "[0.5; 1.0]" << quantity[7] / 100 << endl;
-	cout << "[1.0; 1.5]" << quantity[8] / 100 << endl;
-	cout << "[1.5; 2.0]" << quantity[9] / 100 << endl;
-	cout << "[2.0; 2.5]" << quantity[10] / 100 << endl;
-	cout << "[2.5; 3.0]" << quantity[11] / 100 << endl;
-}
-void print_methods3(double u[]) {
-	double quantity[200] = { 0 }; //number of spaces 
-	// count the quantity of numbers in each space
-	for (size_t i = 0; i < 100; i++) {
-		for (int j = 0; j < 200; j++) {
-			if (u[i] >= 0 + double(j*0.5) && u[i] < double(0.5 + double(j *0.5)))
+		for (int j = 0; j < 12; j++) {
+			if (u[i] >= -3 + double(j*0.5) && u[i] < -2.5 + double(j *0.5))
 				quantity[j]++;
 		}
 	}
-	// cout values
-	for (int j = 0; j < 200; j++) {
-		cout << "[" << 0 + double(j*0.5) << ";" << double(0.5 + double(j *0.5)) << "]" << "  " << quantity[j] / 100 << endl;
+	for (int j = 0; j < 12; j++) {
+		sum += (quantity[j] / 100);
+		cout << "[" <<-3 + double(j*0.5) << ";" << -2.5 + double(j *0.5) << "]" << "  " << quantity[j] / 100 << endl;
+	}
+	//cout << sum << endl;
+}
+void print_methods3(double u[]) {
+	double quantity[100] = { 0 }; 
+	for (size_t i = 0; i < 100; i++) {
+		for (int j = 0; j < 100; j++) {
+			if (u[i] >= 0 + double(j) && u[i] < double(1 + double(j )))
+				quantity[j]++;
+		}
+	}
+	for (int j = 0; j < 100; j++) {
+		cout << "[" << 0 + double(j) << ";" << double(1 + double(j )) << "]" << "  " << quantity[j] / 100 << endl;
 	}
 }
 
@@ -122,19 +94,19 @@ int main() {
 		break;
 
 	case 6:
-		f2(u, rand6);
+		f2(u, met_6);
 		break;
 	case 7:
-		f2(u, rand7);
+		f2(u, met_7);
 		break;
 	case 8:
-		f2(u, rand8);
+		f2(u, met_8);
 		break;
 	case 9:
-		f3(u, rand9);
+		f3(u, met_9);
 		break;
 	case 10:
-		f3(u, rand10);
+		f3(u, met_10);
 		break;
 	}
 	system("pause");

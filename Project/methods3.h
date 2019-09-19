@@ -1,5 +1,5 @@
 #pragma once
 
 
-double rand9();
-double rand10();
+double met_9();
+double met_10();

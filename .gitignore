@@ -3,3 +3,5 @@ Project.sln
 Project/Project.vcxproj
 Project/Project.vcxproj.filters
 Project/Project.vcxproj.user
+Debug/
+Project/Debug/

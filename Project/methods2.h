@@ -2,7 +2,7 @@
 
 
 double sum();
-double rand6();
-double rand7();
-double rand8();
+double met_6();
+double met_7();
+double met_8();
 

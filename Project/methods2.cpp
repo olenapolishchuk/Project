@@ -9,14 +9,14 @@
 static const double m = 0, s = 1;
 double sum() {
 	double sum = 0;
-	double u[6];
-	for (size_t i = 0; i < 6; i++) {
+	double u[12];
+	for (size_t i = 0; i < 12; i++) {
 		u[i] = met_1();
 		sum += u[i];
 	}
 	return sum;
 }
-double rand6() {
+double met_6() {
 	double x;
 	x = m + (sum() - 6)*s;
 	return x;
@@ -24,7 +24,7 @@ double rand6() {
 
 
 
-double rand7() {
+double met_7() {
 	double u[2];
 	for (size_t i = 0; i < 2; i++) {
 		u[i] = met_1();
@@ -35,23 +35,23 @@ double rand7() {
 
 	double s = v1 * v1 + v2 * v2;
 	if (s >= 1) {
-		return rand7();
+		return met_7();
 	}
 	else {
 		double x1 = v1 * sqrt(-2 * log(s) / s);
-		double x2 = v1 * sqrt(-2 * log(s) / s);
-		return x1;
+		double x2 = v2 * sqrt(-2 * log(s) / s);
+		return x1 -x2;
 	}
 }
 
 
 
-double rand8() {
+double met_8() {
 	double u = met_1();
 	double v = met_4();
 	double x = sqrt(8 / M_E)* ((v - 0.5) / u);
 	if (x*x <= 5 - 4 * pow(M_E, 0.25)*u)return x;
-	if (x*x >= (4 * pow(M_E, -1.35)) / u + 1.4) return rand8();
-	if (x*x > -4 * log(u)) return rand8();
+	if (x*x >= (4 * pow(M_E, -1.35)) / u + 1.4) return met_8();
+	if (x*x > -4 * log(u)) return met_8();
 	return x;
 }
